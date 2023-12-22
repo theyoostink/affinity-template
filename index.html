@@ -113,27 +113,27 @@
 <body>
 <h1>Affinity Auto-Battler Template</h1>
 
-<label for="left-character-url">Left Character Image URL:</label>
-<input type="text" id="left-character-url" name="left-character-url" value="https://static.wikia.nocookie.net/feheroes_gamepedia_en/images/b/b7/Altina_Dawns_Trueblade_BtlFace_BU.webp">
+<label for="left-character-url">Left Character Image File:</label>
+<input type="file" id="left-character-file" name="left-character-file">
 <br/>
 <span>Left Character Affinity:</span>
 <br/>
-<input type="radio" id="left-negative" name="left-affinity" value="negative" checked="checked">
+<input type="radio" id="left-negative" name="left-affinity" value="negative">
 <label for="left-negative">Negative</label><br>
 <input type="radio" id="left-positive" name="left-affinity" value="positive">
 <label for="left-positive">Positive</label><br>
-<input type="radio" id="left-verypositive" name="left-affinity" value="verypositive">
+<input type="radio" id="left-verypositive" name="left-affinity" value="verypositive" checked="checked">
 <label for="left-verypositive">Very Positive</label>
 
 <br/>
 <label for="left-character-quote">Left Character Quote:</label>
-<input type="text" id="left-character-quote" name="left-character-quote" value="Considers cringe">
+<input type="text" id="left-character-quote" name="left-character-quote" value="Loves self">
 
 <br/>
 <br/>
 
-<label for="right-character-url">Right Character Image URL:</label>
-<input type="text" id="right-character-url" name="right-character-url" value="https://static.wikia.nocookie.net/feheroes_gamepedia_en/images/6/6f/Fjorm_Seaside_Thaw_BtlFace_BU.webp">
+<label for="right-character-url">Right Character Image File:</label>
+<input type="file" id="right-character-file" name="right-character-file">
 <br/>
 <span>Left Character Affinity:</span>
 <br/>
@@ -197,10 +197,28 @@ var right_affinity_bubble = {
 };
 
 function update() {
-	var left_character_url = document.getElementById("left-character-url").value;
-	var right_character_url = document.getElementById("right-character-url").value;
-	document.getElementById("left-character-img").style.backgroundImage="url("+left_character_url+")";
-	document.getElementById("right-character-img").style.backgroundImage="url("+right_character_url+")";
+	var left_character_file = document.getElementById("left-character-file").files[0];
+	var left_character_file_reader = new FileReader();
+	left_character_file_reader.onloadend = function () {
+		document.getElementById("left-character-img").style.backgroundImage="url("+left_character_file_reader.result+")";
+	};
+	if (left_character_file) {
+		left_character_file_reader.readAsDataURL(left_character_file);
+	}
+	else {
+		document.getElementById("left-character-img").style.backgroundImage="url('https://i.imgur.com/Npg1v2q.png')";
+	}
+	var right_character_file = document.getElementById("right-character-file").files[0];
+	var right_character_file_reader = new FileReader();
+	right_character_file_reader.onloadend = function () {
+		document.getElementById("right-character-img").style.backgroundImage="url("+right_character_file_reader.result+")";
+	};
+	if (right_character_file) {
+		right_character_file_reader.readAsDataURL(right_character_file);
+	}
+	else {
+		document.getElementById("right-character-img").style.backgroundImage="url('https://i.imgur.com/Th5zyzU.png')";
+	}
 
 	var left_affinity = document.querySelector("input[name='left-affinity']:checked").value;
 	var right_affinity = document.querySelector("input[name='right-affinity']:checked").value;
