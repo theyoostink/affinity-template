@@ -150,7 +150,7 @@
 <br/>
 <br/>
 
-<button id="update-button">Update</button><button id="download-button">Download</button>
+<button id="update-button">Update</button>
 
 <br/>
 <div id="canvas">
@@ -166,8 +166,6 @@
 	</div>
 </div>
 
-<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
 <script type="text/javascript">
 
 /*
@@ -224,14 +222,6 @@ function update() {
 }
 
 document.getElementById("update-button").addEventListener("click", update);
-
-document.getElementById("download-button").addEventListener("click", function() {
-	html2canvas(document.getElementById("canvas"), { backgroundColor: null, useCors: true }).then(function(canvas) {
-        canvas.toBlob(function(blob) {
-            saveAs(blob, "affinity.png");
-        });
-    });
-});
 
 update();
 
