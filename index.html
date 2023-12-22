@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Affinity Auto-Battler Template</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=VT323&display=swap" rel="stylesheet">
+	<style type="text/css">
+		body {
+			background-color: black;
+			color: white;
+			font-family: 'Roboto', sans-serif;
+		}
+		h1 {
+			text-align: center;
+		}
+		#canvas {
+			position: relative;
+			margin: 0 auto;
+			display: block;
+			border: 1px black solid;
+			background-color: #02232e;
+			width: 1000px;
+			height: 500px;
+		}
+		#left-character-img {
+			position: absolute;
+			background-image: url("https://i.imgur.com/Npg1v2q.png");
+			background-repeat: no-repeat;
+  			background-size: cover;
+			top: 108px;
+			left: 0px;
+			width: 450px;
+			height: 284px;
+			box-shadow: 0 0 20px 20px #02232e inset;
+			mask-image: radial-gradient(ellipse, #02232e 30%, transparent 100%);
+		}
+		#right-character-img {
+			position: absolute;
+			background-image: url("https://i.imgur.com/Npg1v2q.png");
+			background-repeat: no-repeat;
+  			background-size: cover;
+			top: 108px;
+			left: 550px;
+			width: 450px;
+			height: 284px;
+			transform: scaleX(-1);
+			box-shadow: 0 0 20px 20px #02232e inset;
+			mask-image: radial-gradient(ellipse, #02232e 30%, transparent 100%);
+		}
+		#left-character-arrow {
+			position: absolute;
+			background-image: url("https://i.imgur.com/HWgUYR6.png");
+			background-repeat: no-repeat;
+  			background-size: cover;
+  			top: 170px;
+			left: 400px;
+			width: 200px;
+			height: 47px;
+		}
+		#right-character-arrow {
+			position: absolute;
+			background-image: url("https://i.imgur.com/iZR9HiS.png");
+			background-repeat: no-repeat;
+  			background-size: cover;
+  			top: 290px;
+			left: 400px;
+			width: 200px;
+			height: 47px;
+		}
+		#left-character-bubble {
+			position: absolute;
+			background-image: url("https://i.imgur.com/3EFGF8L.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+  			top: 40px;
+			left: 50px;
+			width: 375px;
+			height: 90px;
+		}
+		#right-character-bubble {
+			position: absolute;
+			background-image: url("https://i.imgur.com/rGzEtL2.png");
+			background-repeat: no-repeat;
+			background-size: cover;
+  			bottom: 40px;
+			right: 50px;
+			width: 375px;
+			height: 90px;
+		}
+		#left-character-quote-text {
+			display: table;
+			margin: 0 auto;
+			padding-top: 12px;
+			text-shadow: 3px 0 black, -3px 0 black, 0 3px black, 0 -3px black,
+               2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
+			font-weight: bold;
+			font-size: 28px;
+		}
+		#right-character-quote-text {
+			display: table;
+			margin: 0 auto;
+			padding-top: 36px;
+			text-shadow: 3px 0 black, -3px 0 black, 0 3px black, 0 -3px black,
+               2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
+			font-weight: bold;
+			font-size: 28px;
+		}
+	</style>
+</head>
+<body>
+<h1>Affinity Auto-Battler Template</h1>
+
+<label for="left-character-url">Left Character Image URL:</label>
+<input type="text" id="left-character-url" name="left-character-url" value="https://static.wikia.nocookie.net/feheroes_gamepedia_en/images/b/b7/Altina_Dawns_Trueblade_BtlFace_BU.webp/revision/latest?cb=20200530195451">
+<br/>
+<span>Left Character Affinity:</span>
+<br/>
+<input type="radio" id="left-negative" name="left-affinity" value="negative" checked="checked">
+<label for="left-negative">Negative</label><br>
+<input type="radio" id="left-positive" name="left-affinity" value="positive">
+<label for="left-positive">Positive</label><br>
+<input type="radio" id="left-verypositive" name="left-affinity" value="verypositive">
+<label for="left-verypositive">Very Positive</label>
+
+<br/>
+<label for="left-character-quote">Left Character Quote:</label>
+<input type="text" id="left-character-quote" name="left-character-quote" value="Considers cringe">
+
+<br/>
+<br/>
+
+<label for="right-character-url">Right Character Image URL:</label>
+<input type="text" id="right-character-url" name="right-character-url" value="https://static.wikia.nocookie.net/feheroes_gamepedia_en/images/6/6f/Fjorm_Seaside_Thaw_BtlFace_BU.webp/revision/latest?cb=20230706042259">
+<br/>
+<span>Left Character Affinity:</span>
+<br/>
+<input type="radio" id="right-negative" name="right-affinity" value="negative" checked="checked">
+<label for="right-negative">Negative</label><br>
+<input type="radio" id="right-positive" name="right-affinity" value="positive">
+<label for="right-positive">Positive</label><br>
+<input type="radio" id="right-verypositive" name="right-affinity" value="verypositive">
+<label for="right-verypositive">Very Positive</label>
+<br/>
+<label for="right-character-quote">Right Character Quote:</label>
+<input type="text" id="right-character-quote" name="right-character-quote" value="Considers cringe">
+
+<br/>
+<br/>
+
+<button id="update-button">Update</button><button id="download-button">Download</button>
+
+<br/>
+<div id="canvas">
+	<div id="left-character-img"></div>
+	<div id="right-character-img"></div>
+	<div id="left-character-arrow"></div>
+	<div id="right-character-arrow"></div>
+	<div id="left-character-bubble">
+		<span id="left-character-quote-text">CRINGE</span>
+	</div>
+	<div id="right-character-bubble">
+		<span id="right-character-quote-text">CRINGE</span>
+	</div>
+</div>
+
+<script type="text/javascript" src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
+<script type="text/javascript">
+
+/*
+	Shout out to https://yeoji.github.io/spritesheet-cutter/
+*/
+
+var left_affinity_arrow = {
+	"negative": "https://i.imgur.com/HWgUYR6.png",
+	"positive": "https://i.imgur.com/yPK5vhu.png",
+	"verypositive": "https://i.imgur.com/PJV6X44.png"
+};
+
+var right_affinity_arrow = {
+	"negative": "https://i.imgur.com/iZR9HiS.png",
+	"positive": "https://i.imgur.com/i8xrniw.png",
+	"verypositive": "https://i.imgur.com/FFNbEzY.png"
+};
+
+var left_affinity_bubble = {
+	"negative": "https://i.imgur.com/3EFGF8L.png",
+	"positive": "https://i.imgur.com/jilsnKM.png",
+	"verypositive": "https://i.imgur.com/0ONrLgF.png"
+};
+
+var right_affinity_bubble = {
+	"negative": "https://i.imgur.com/rGzEtL2.png",
+	"positive": "https://i.imgur.com/zYHUTVe.png",
+	"verypositive": "https://i.imgur.com/b5L79kw.png"
+};
+
+function update() {
+	var left_character_url = document.getElementById("left-character-url").value;
+	var right_character_url = document.getElementById("right-character-url").value;
+	document.getElementById("left-character-img").style.backgroundImage="url("+left_character_url+")";
+	document.getElementById("right-character-img").style.backgroundImage="url("+right_character_url+")";
+
+	var left_affinity = document.querySelector("input[name='left-affinity']:checked").value;
+	var right_affinity = document.querySelector("input[name='right-affinity']:checked").value;
+
+	var left_affinity_arrow_url = left_affinity_arrow[left_affinity];
+	var right_affinity_arrow_url = right_affinity_arrow[right_affinity];
+	document.getElementById("left-character-arrow").style.backgroundImage="url("+left_affinity_arrow_url+")";
+	document.getElementById("right-character-arrow").style.backgroundImage="url("+right_affinity_arrow_url+")";
+
+	var left_affinity_bubble_url = left_affinity_bubble[left_affinity];
+	var right_affinity_bubble_url = right_affinity_bubble[right_affinity];
+	document.getElementById("left-character-bubble").style.backgroundImage="url("+left_affinity_bubble_url+")";
+	document.getElementById("right-character-bubble").style.backgroundImage="url("+right_affinity_bubble_url+")";
+
+	var left_character_quote_text = document.getElementById("left-character-quote").value;
+	var right_character_quote_text = document.getElementById("right-character-quote").value;
+	document.getElementById("left-character-quote-text").innerHTML=left_character_quote_text;
+	document.getElementById("right-character-quote-text").innerHTML=right_character_quote_text;
+}
+
+document.getElementById("update-button").addEventListener("click", update);
+
+document.getElementById("download-button").addEventListener("click", function() {
+	html2canvas(document.getElementById("canvas"), { backgroundColor: null, useCors: true }).then(function(canvas) {
+        canvas.toBlob(function(blob) {
+            saveAs(blob, "affinity.png");
+        });
+    });
+});
+
+update();
+
+/*
+	sprites
+	character is 476 x 300
+	arrow is 243 x 57
+	bubble:
+		1.625 inches in photoshop
+		4.875
+		123 pixels in sprite
+
+		51 pixels in paint
+		153 pixels long in paint
+	bubble is 356 x 85
+
+	screenshot
+	400 across for the whole thing
+	180 across for each image
+	90 across for arrow
+	150 across for bubble
+
+	webpage
+	1000 across for the whole thing
+	450 across for each image
+	225 across for arrow
+	375 across for bubble
+
+*/
+
+</script>
+
+</body>
+</html>
