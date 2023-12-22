@@ -270,13 +270,10 @@ function update() {
 }
 
 document.getElementById("download-button").addEventListener("click", function() {
-	console.log("DOWNLOAD");
 	var node = document.getElementById('canvas');
-	domtoimage.toPng(node)
-    .then(function (dataUrl) {
-        var img = new Image();
-        img.src = dataUrl;
-        document.body.appendChild(img);
+	domtoimage.toBlob(node)
+    .then(function (blob) {
+        window.saveAs(blob, 'affinity.png');
     })
     .catch(function (error) {
         console.error('oops, something went wrong!', error);
