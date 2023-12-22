@@ -30,6 +30,7 @@
 		#canvas {
 			width: 100%;
 			height: 100%;
+			background-color: #02232e;
 		}
 		#left-character-img {
 			position: absolute;
@@ -176,7 +177,7 @@
 <input type="number" name="right-offset" id="right-offset" value="10" onchange="update()">
 </div>
 
-<button id="download-button">Download</button>
+<button id="download-button">Download Image</button>
 
 <div id="canvas-container">
 	<div id="canvas">
@@ -191,6 +192,19 @@
 			<span id="right-character-quote-text">CRINGE</span>
 		</div>
 	</div>
+</div>
+
+<div id="instructions">
+	<h2>Instructions</h2>
+	<ol>
+		<li>You will have to upload an image file for each character.</li>
+		<li>Go to the FEH Fandom wiki page for your character of choice (e.g. <a href="https://feheroes.fandom.com/wiki/Lucina:_Future_Witness">Lucina's hero page</a>).</li>
+		<li>Go to the Misc tab near the top of the article (e.g. <a href="https://feheroes.fandom.com/wiki/Lucina:_Future_Witness/Misc">Lucina's misc page</a>).</li>
+		<li>Scroll down to the Gallery section. Open the battle portrait image (regular for positive and very positive) (damaged for negative).</li>
+		<li>Save/download the image. It will be a webp file, but that's okay.</li>
+		<li>Enter the webp image file you downloaded to this tool.</li>
+		<li>You can adjust the font size and vertical offset.</li>
+	</ol>
 </div>
 
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.0/FileSaver.min.js"></script>
@@ -274,13 +288,13 @@ function update() {
 }
 
 document.getElementById("download-button").addEventListener("click", function() {
-	var node = document.getElementById('canvas');
+	var node = document.getElementById("canvas");
 	domtoimage.toBlob(node)
     .then(function (blob) {
-		saveAs(blob, 'affinity.png');
+		saveAs(blob, "affinity.png");
     })
     .catch(function (error) {
-        console.error('oops, something went wrong!', error);
+        console.error("Oops, something went wrong!", error);
     });
 });
 
