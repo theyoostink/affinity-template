@@ -4,14 +4,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Affinity Auto-Battler Template</title>
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Roboto&family=VT323&display=swap" rel="stylesheet">
 	<style type="text/css">
+		@font-face {
+			font-family: FEHFont;
+			src: url(css/FEHFont.ttf);
+		}
 		body {
 			background-color: black;
 			color: white;
-			font-family: 'Roboto', sans-serif;
+			font-family: Arial, sans-serif;
 		}
 		h1 {
 			text-align: center;
@@ -24,10 +25,11 @@
 			background-color: #02232e;
 			width: 1000px;
 			height: 500px;
+			font-family: FEHFont;
 		}
 		#left-character-img {
 			position: absolute;
-			background-image: url("https://i.imgur.com/Npg1v2q.png");
+			background-image: url("images/lucina_positive.png");
 			background-repeat: no-repeat;
   			background-size: cover;
 			top: 108px;
@@ -39,7 +41,7 @@
 		}
 		#right-character-img {
 			position: absolute;
-			background-image: url("https://i.imgur.com/Npg1v2q.png");
+			background-image: url("images/lucina_negative.png");
 			background-repeat: no-repeat;
   			background-size: cover;
 			top: 108px;
@@ -52,7 +54,7 @@
 		}
 		#left-character-arrow {
 			position: absolute;
-			background-image: url("https://i.imgur.com/HWgUYR6.png");
+			background-image: url("images/verypositive_lr.png");
 			background-repeat: no-repeat;
   			background-size: cover;
   			top: 170px;
@@ -62,7 +64,7 @@
 		}
 		#right-character-arrow {
 			position: absolute;
-			background-image: url("https://i.imgur.com/iZR9HiS.png");
+			background-image: url("images/negative_rl.png");
 			background-repeat: no-repeat;
   			background-size: cover;
   			top: 290px;
@@ -72,7 +74,7 @@
 		}
 		#left-character-bubble {
 			position: absolute;
-			background-image: url("https://i.imgur.com/3EFGF8L.png");
+			background-image: url("images/verypositive_left_long.png");
 			background-repeat: no-repeat;
 			background-size: cover;
   			top: 40px;
@@ -82,7 +84,7 @@
 		}
 		#right-character-bubble {
 			position: absolute;
-			background-image: url("https://i.imgur.com/rGzEtL2.png");
+			background-image: url("images/negative_right_long.png");
 			background-repeat: no-repeat;
 			background-size: cover;
   			bottom: 40px;
@@ -93,66 +95,88 @@
 		#left-character-quote-text {
 			display: table;
 			margin: 0 auto;
-			padding-top: 12px;
-			text-shadow: 3px 0 black, -3px 0 black, 0 3px black, 0 -3px black,
-               2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
+			padding-top: 10px;
+			text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
 			font-weight: bold;
-			font-size: 28px;
+			font-size: 26px;
+			text-align: center;
 		}
 		#right-character-quote-text {
 			display: table;
 			margin: 0 auto;
-			padding-top: 36px;
-			text-shadow: 3px 0 black, -3px 0 black, 0 3px black, 0 -3px black,
-               2px 2px black, -2px -2px black, 2px -2px black, -2px 2px black;
+			padding-top: 34px;
+			text-shadow: rgb(0, 0, 0) 3px 0px 0px, rgb(0, 0, 0) 2.83487px 0.981584px 0px, rgb(0, 0, 0) 2.35766px 1.85511px 0px, rgb(0, 0, 0) 1.62091px 2.52441px 0px, rgb(0, 0, 0) 0.705713px 2.91581px 0px, rgb(0, 0, 0) -0.287171px 2.98622px 0px, rgb(0, 0, 0) -1.24844px 2.72789px 0px, rgb(0, 0, 0) -2.07227px 2.16926px 0px, rgb(0, 0, 0) -2.66798px 1.37182px 0px, rgb(0, 0, 0) -2.96998px 0.42336px 0px, rgb(0, 0, 0) -2.94502px -0.571704px 0px, rgb(0, 0, 0) -2.59586px -1.50383px 0px, rgb(0, 0, 0) -1.96093px -2.27041px 0px, rgb(0, 0, 0) -1.11013px -2.78704px 0px, rgb(0, 0, 0) -0.137119px -2.99686px 0px, rgb(0, 0, 0) 0.850987px -2.87677px 0px, rgb(0, 0, 0) 1.74541px -2.43999px 0px, rgb(0, 0, 0) 2.44769px -1.73459px 0px, rgb(0, 0, 0) 2.88051px -0.838247px 0px;
 			font-weight: bold;
-			font-size: 28px;
+			font-size: 26px;
+			text-align: center;
+		}
+		#left-controls {
+			width: 50%;
+			float: left;
+		}
+		#right-controls {
+			width: 50%;
+			float: left;
+		}
+		#download-button {
+			margin-top: 40px;
+		}
+		#canvas {
+			
 		}
 	</style>
 </head>
 <body>
 <h1>Affinity Auto-Battler Template</h1>
 
-<label for="left-character-url">Left Character Image File:</label>
-<input type="file" id="left-character-file" name="left-character-file">
+<div id="left-controls">
+<label for="left-character-file">Left Character Image File:</label>
+<input type="file" id="left-character-file" name="left-character-file" onchange="update()">
 <br/>
 <span>Left Character Affinity:</span>
 <br/>
-<input type="radio" id="left-negative" name="left-affinity" value="negative">
+<input type="radio" id="left-negative" name="left-affinity" value="negative" onchange="update()">
 <label for="left-negative">Negative</label><br>
-<input type="radio" id="left-positive" name="left-affinity" value="positive">
+<input type="radio" id="left-positive" name="left-affinity" value="positive" onchange="update()">
 <label for="left-positive">Positive</label><br>
-<input type="radio" id="left-verypositive" name="left-affinity" value="verypositive" checked="checked">
+<input type="radio" id="left-verypositive" name="left-affinity" value="verypositive" onchange="update()" checked="checked">
 <label for="left-verypositive">Very Positive</label>
-
 <br/>
 <label for="left-character-quote">Left Character Quote:</label>
-<input type="text" id="left-character-quote" name="left-character-quote" value="Loves self">
+<input type="text" id="left-character-quote" name="left-character-quote" value="Eats Hooters wings with" onchange="update()">
+<br/>
+<label for="left-font">Left Font Size:</label>
+<input type="number" name="left-font" id="left-font" value="26" onchange="update()">
+<br/>
+<label for="left-offset">Left Top Offset:</label>
+<input type="number" name="left-offset" id="left-offset" value="10" onchange="update()">
+</div>
 
+<div id="right-controls">
+<label for="right-character-file">Right Character Image File:</label>
+<input type="file" id="right-character-file" name="right-character-file" onchange="update()">
 <br/>
+<span>Right Character Affinity:</span>
 <br/>
-
-<label for="right-character-url">Right Character Image File:</label>
-<input type="file" id="right-character-file" name="right-character-file">
-<br/>
-<span>Left Character Affinity:</span>
-<br/>
-<input type="radio" id="right-negative" name="right-affinity" value="negative" checked="checked">
+<input type="radio" id="right-negative" name="right-affinity" value="negative" onchange="update()" checked="checked">
 <label for="right-negative">Negative</label><br>
-<input type="radio" id="right-positive" name="right-affinity" value="positive">
+<input type="radio" id="right-positive" name="right-affinity" value="positive" onchange="update()">
 <label for="right-positive">Positive</label><br>
-<input type="radio" id="right-verypositive" name="right-affinity" value="verypositive">
+<input type="radio" id="right-verypositive" name="right-affinity" value="verypositive" onchange="update()">
 <label for="right-verypositive">Very Positive</label>
 <br/>
 <label for="right-character-quote">Right Character Quote:</label>
-<input type="text" id="right-character-quote" name="right-character-quote" value="Considers cringe">
-
+<input type="text" id="right-character-quote" name="right-character-quote" value="Considers cringe" onchange="update()">
 <br/>
+<label for="right-font">Right Font Size:</label>
+<input type="number" name="right-font" id="right-font" value="26" onchange="update()">
 <br/>
+<label for="right-offset">Right Top Offset:</label>
+<input type="number" name="right-offset" id="right-offset" value="10" onchange="update()">
+</div>
 
-<button id="update-button">Update</button>
+<button id="download-button">Download</button>
 
-<br/>
 <div id="canvas">
 	<div id="left-character-img"></div>
 	<div id="right-character-img"></div>
@@ -166,6 +190,7 @@
 	</div>
 </div>
 
+<script type="text/javascript" src="js/dom-to-image.min.js"></script>
 <script type="text/javascript">
 
 /*
@@ -173,27 +198,27 @@
 */
 
 var left_affinity_arrow = {
-	"negative": "https://i.imgur.com/HWgUYR6.png",
-	"positive": "https://i.imgur.com/yPK5vhu.png",
-	"verypositive": "https://i.imgur.com/PJV6X44.png"
+	"negative": "images/negative_lr.png",
+	"positive": "images/positive_lr.png",
+	"verypositive": "images/verypositive_lr.png"
 };
 
 var right_affinity_arrow = {
-	"negative": "https://i.imgur.com/iZR9HiS.png",
-	"positive": "https://i.imgur.com/i8xrniw.png",
-	"verypositive": "https://i.imgur.com/FFNbEzY.png"
+	"negative": "images/negative_rl.png",
+	"positive": "images/positive_rl.png",
+	"verypositive": "images/verypositive_rl.png"
 };
 
 var left_affinity_bubble = {
-	"negative": "https://i.imgur.com/3EFGF8L.png",
-	"positive": "https://i.imgur.com/jilsnKM.png",
-	"verypositive": "https://i.imgur.com/0ONrLgF.png"
+	"negative": "images/negative_left_long.png",
+	"positive": "images/positive_left_long.png",
+	"verypositive": "images/verypositive_left_long.png"
 };
 
 var right_affinity_bubble = {
-	"negative": "https://i.imgur.com/rGzEtL2.png",
-	"positive": "https://i.imgur.com/zYHUTVe.png",
-	"verypositive": "https://i.imgur.com/b5L79kw.png"
+	"negative": "images/negative_right_long.png",
+	"positive": "images/positive_right_long.png",
+	"verypositive": "images/verypositive_right_long.png"
 };
 
 function update() {
@@ -206,7 +231,7 @@ function update() {
 		left_character_file_reader.readAsDataURL(left_character_file);
 	}
 	else {
-		document.getElementById("left-character-img").style.backgroundImage="url('https://i.imgur.com/Npg1v2q.png')";
+		document.getElementById("left-character-img").style.backgroundImage="url('images/lucina_positive.png')";
 	}
 	var right_character_file = document.getElementById("right-character-file").files[0];
 	var right_character_file_reader = new FileReader();
@@ -217,7 +242,7 @@ function update() {
 		right_character_file_reader.readAsDataURL(right_character_file);
 	}
 	else {
-		document.getElementById("right-character-img").style.backgroundImage="url('https://i.imgur.com/Th5zyzU.png')";
+		document.getElementById("right-character-img").style.backgroundImage="url('images/lucina_negative.png')";
 	}
 
 	var left_affinity = document.querySelector("input[name='left-affinity']:checked").value;
@@ -237,9 +262,26 @@ function update() {
 	var right_character_quote_text = document.getElementById("right-character-quote").value;
 	document.getElementById("left-character-quote-text").innerHTML=left_character_quote_text;
 	document.getElementById("right-character-quote-text").innerHTML=right_character_quote_text;
+
+	var left_font = document.getElementById("left-font").value;
+	var left_offset = document.getElementById("left-offset").value;
+	document.getElementById("left-character-quote-text").style.fontSize = left_font+"px";
+	document.getElementById("left-character-quote-text").style.paddingTop = left_offset+"px";
 }
 
-document.getElementById("update-button").addEventListener("click", update);
+document.getElementById("download-button").addEventListener("click", function() {
+	console.log("DOWNLOAD");
+	var node = document.getElementById('canvas');
+	domtoimage.toPng(node)
+    .then(function (dataUrl) {
+        var img = new Image();
+        img.src = dataUrl;
+        document.body.appendChild(img);
+    })
+    .catch(function (error) {
+        console.error('oops, something went wrong!', error);
+    });
+});
 
 update();
 
