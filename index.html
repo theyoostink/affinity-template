@@ -199,7 +199,7 @@
 <input type="number" name="right-font" id="right-font" value="26" onchange="update()">
 <br/>
 <label for="right-offset">Right Top Offset:</label>
-<input type="number" name="right-offset" id="right-offset" value="10" onchange="update()">
+<input type="number" name="right-offset" id="right-offset" value="34" onchange="update()">
 </div>
 
 <div id="button-container">
@@ -314,6 +314,11 @@ function update() {
 	var left_offset = document.getElementById("left-offset").value;
 	document.getElementById("left-character-quote-text").style.fontSize = left_font+"px";
 	document.getElementById("left-character-quote-text").style.paddingTop = left_offset+"px";
+
+	var right_font = document.getElementById("right-font").value;
+	var right_offset = document.getElementById("right-offset").value;
+	document.getElementById("right-character-quote-text").style.fontSize = right_font+"px";
+	document.getElementById("right-character-quote-text").style.paddingTop = right_offset+"px";
 }
 
 document.getElementById("download-button").addEventListener("click", function() {
