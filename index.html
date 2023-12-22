@@ -17,7 +17,7 @@
 		h1 {
 			text-align: center;
 		}
-		#canvas {
+		#canvas-container {
 			position: relative;
 			margin: 0 auto;
 			display: block;
@@ -26,6 +26,10 @@
 			width: 1000px;
 			height: 500px;
 			font-family: FEHFont;
+		}
+		#canvas {
+			width: 100%;
+			height: 100%;
 		}
 		#left-character-img {
 			position: absolute;
@@ -121,9 +125,6 @@
 		#download-button {
 			margin-top: 40px;
 		}
-		#canvas {
-			
-		}
 	</style>
 </head>
 <body>
@@ -177,16 +178,18 @@
 
 <button id="download-button">Download</button>
 
-<div id="canvas">
-	<div id="left-character-img"></div>
-	<div id="right-character-img"></div>
-	<div id="left-character-arrow"></div>
-	<div id="right-character-arrow"></div>
-	<div id="left-character-bubble">
-		<span id="left-character-quote-text">CRINGE</span>
-	</div>
-	<div id="right-character-bubble">
-		<span id="right-character-quote-text">CRINGE</span>
+<div id="canvas-container">
+	<div id="canvas">
+		<div id="left-character-img"></div>
+		<div id="right-character-img"></div>
+		<div id="left-character-arrow"></div>
+		<div id="right-character-arrow"></div>
+		<div id="left-character-bubble">
+			<span id="left-character-quote-text">CRINGE</span>
+		</div>
+		<div id="right-character-bubble">
+			<span id="right-character-quote-text">CRINGE</span>
+		</div>
 	</div>
 </div>
 
