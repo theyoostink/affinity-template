@@ -12,12 +12,10 @@
 		body {
 			background-color: black;
 			color: white;
-			font-family: Arial, sans-serif;
-		}
-		h1 {
-			text-align: center;
+			font-family: FEHFont, Arial, sans-serif;
 		}
 		#canvas-container {
+			float: left;
 			position: relative;
 			margin: 0 auto;
 			display: block;
@@ -116,15 +114,42 @@
 			text-align: center;
 		}
 		#left-controls {
-			width: 50%;
+			margin-top: 20px;
+			width: 500px;
 			float: left;
 		}
 		#right-controls {
-			width: 50%;
+			margin-top: 20px;
+			width: 500px;
+			float: left;
+		}
+		#button-container {
+			width: 100%;
 			float: left;
 		}
 		#download-button {
+			border-radius: 15px;
+			padding: 10px;
 			margin-top: 40px;
+			margin-bottom: 40px;
+			font-weight: bold;
+		}
+		#download-button:hover, #download-button:active {
+			background-color: #aaa;
+		}
+		input[type=text], input[type=number] {
+			border-radius: 5px;
+			border: none;
+		}
+		#instructions {
+			width: 100%;
+			float: left;
+		}
+		a {
+			color: white;
+		}
+		a:hover, a:active {
+			color: yellow;
 		}
 	</style>
 </head>
@@ -177,7 +202,9 @@
 <input type="number" name="right-offset" id="right-offset" value="10" onchange="update()">
 </div>
 
+<div id="button-container">
 <button id="download-button">Download Image</button>
+</div>
 
 <div id="canvas-container">
 	<div id="canvas">
@@ -200,10 +227,11 @@
 		<li>You will have to upload an image file for each character.</li>
 		<li>Go to the FEH Fandom wiki page for your character of choice (e.g. <a href="https://feheroes.fandom.com/wiki/Lucina:_Future_Witness">Lucina's hero page</a>).</li>
 		<li>Go to the Misc tab near the top of the article (e.g. <a href="https://feheroes.fandom.com/wiki/Lucina:_Future_Witness/Misc">Lucina's misc page</a>).</li>
-		<li>Scroll down to the Gallery section. Open the battle portrait image (regular for positive and very positive) (damaged for negative).</li>
+		<li>Scroll down to the Gallery section. Open the battle portrait image (regular for positive/very positive or damaged for negative).</li>
 		<li>Save/download the image. It will be a webp file, but that's okay.</li>
-		<li>Enter the webp image file you downloaded to this tool.</li>
-		<li>You can adjust the font size and vertical offset.</li>
+		<li>Enter the webp image file you downloaded to this tool's Image File input.</li>
+		<li>You can adjust the font size and vertical offset for the message text. Negative values don't work.</li>
+		<li>The Download Image button will save the result as an affinity.png image file.</li>
 	</ol>
 </div>
 
@@ -299,33 +327,6 @@ document.getElementById("download-button").addEventListener("click", function() 
 });
 
 update();
-
-/*
-	sprites
-	character is 476 x 300
-	arrow is 243 x 57
-	bubble:
-		1.625 inches in photoshop
-		4.875
-		123 pixels in sprite
-
-		51 pixels in paint
-		153 pixels long in paint
-	bubble is 356 x 85
-
-	screenshot
-	400 across for the whole thing
-	180 across for each image
-	90 across for arrow
-	150 across for bubble
-
-	webpage
-	1000 across for the whole thing
-	450 across for each image
-	225 across for arrow
-	375 across for bubble
-
-*/
 
 </script>
 
